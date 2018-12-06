@@ -1,0 +1,23 @@
+{
+  "name": "admin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "admin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Teguh Arifianto",
+  "license": "ISC",
+  "preferGlobal": true,
+  "bin": "./src/admin.js",
+  "dependencies": {
+    "cli-table2": "^0.2.0",
+    "commander": "^2.19.0",
+    "dedent": "^0.7.0",
+    "inquirer": "^6.2.1",
+    "lowdb": "^1.0.0",
+    "nodegit": "^0.23.0",
+    "pm2": "^3.2.2",
+    "shelljs": "^0.8.3"
+  }
+}

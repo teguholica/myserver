@@ -1,0 +1,31 @@
+version: '3.1'
+services:
+  admin:
+    build:
+      context: ./admin
+      dockerfile: dev.Dockerfile
+    restart: always
+    volumes:
+      - ./app:/home/app
+      - ./repo:/home/repo
+      - ./admin/gitserver/src:/home/admin/gitserver/src
+      - ./admin/gitserver/package.json:/home/admin/gitserver/package.json
+      - ./admin/gateway/src:/home/admin/gateway/src
+      - ./admin/gateway/package.json:/home/admin/gateway/package.json
+      - ./admin/cli/src:/home/admin/cli/src
+      - ./admin/cli/package.json:/home/admin/cli/package.json
+      - ./admin/config.json:/home/admin/config.json
+      - ./admin/pm2.yml:/home/admin/pm2.yml
+    command: >
+      bash -c "cd /home/admin/gitserver
+      && npm install
+      && cd /home/admin/gateway
+      && npm install
+      && cd /home/admin/cli
+      && npm install
+      && yarn link
+      && chmod +x /usr/local/bin/admin
+      && cd /home/admin
+      && pm2-runtime pm2.yml"
+    ports:
+      - 80:80

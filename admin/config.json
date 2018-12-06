@@ -1,0 +1,26 @@
+{
+  "general": {
+    "protocol": "http",
+    "domain": "localhost"
+  },
+  "routes": [
+    {
+      "type": "api",
+      "name": "repo",
+      "route": "repo",
+      "port": "7005"
+    },
+    {
+      "type": "hosting",
+      "name": "hosting",
+      "route": "hosting",
+      "port": "3001"
+    },
+    {
+      "type": "hosting",
+      "name": "frontend",
+      "route": "frontend",
+      "port": "3002"
+    }
+  ]
+}

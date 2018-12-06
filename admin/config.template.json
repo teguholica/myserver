@@ -1,0 +1,13 @@
+{
+  "general": {
+    "protocol": "http",
+    "domain": "localhost"
+  },
+  "routes": [
+    {
+      "name": "repo",
+      "route": "repo",
+      "port": "7005"
+    }
+  ]
+}

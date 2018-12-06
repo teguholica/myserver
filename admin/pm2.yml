@@ -1,0 +1,9 @@
+apps:
+  - script   : './gitserver/src/index.js'
+    name     : 'gitserver'
+    exec_mode: 'cluster'
+    instances: 1
+  - script   : './gateway/src/index.js'
+    name     : 'gateway'
+    exec_mode: 'cluster'
+    instances: 1
