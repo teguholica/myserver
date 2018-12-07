@@ -15,7 +15,6 @@ services:
       - ./admin/cli/src:/home/admin/cli/src
       - ./admin/cli/package.json:/home/admin/cli/package.json
       - ./admin/config.json:/home/admin/config.json
-      - ./admin/pm2.yml:/home/admin/pm2.yml
     command: >
       bash -c "cd /home/admin/gitserver
       && npm install
@@ -26,6 +25,7 @@ services:
       && yarn link
       && chmod +x /usr/local/bin/admin
       && cd /home/admin
-      && pm2-runtime pm2.yml"
+      && admin generatepm2
+      && pm2-runtime process.json --web 3000"
     ports:
       - 80:80

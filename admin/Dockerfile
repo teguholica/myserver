@@ -22,8 +22,8 @@ RUN npm install
 RUN yarn link
 RUN chmod +x /usr/local/bin/admin
 
-COPY ./config.json /home/admin/config.json
-COPY ./pm2.yml /home/admin/pm2.yml
+COPY ./config.template.json /home/admin/config.json
+COPY ./pm2.json /home/admin/pm2.json
 
 WORKDIR /home/admin
 

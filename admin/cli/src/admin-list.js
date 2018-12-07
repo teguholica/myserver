@@ -11,19 +11,20 @@ const helpers = require('./helpers')
 const db = low(new FileSync(path.join(__dirname, `../../config.json`)))
 
 program
-    .action(cmd => {
+    .action(() => {
         helpers.getListOfDir(path.join(__dirname, `../../../repo`))
             .then(dirList => {
                 const generalConfig = db.get('general').value()
                 const routesConfig = db.get('routes')
                 const table = new Table({
-                    head: ['App Name', 'GIT URL', 'Route', 'Port'],
-                    colWidths: [20, 40, 20, 10]
+                    head: ['Type', 'App Name', 'GIT URL', 'Route', 'Port'],
+                    colWidths: [20, 20, 40, 20, 10]
                 })
 
                 const repoList = dirList.map(name => {
                     const routeConfig = routesConfig.find({name: name})
                     return [
+                        routeConfig.isUndefined().value() ? '' : routeConfig.value().type,
                         name,
                         `${generalConfig.protocol}://${generalConfig.domain}/repo/${name}`,
                         routeConfig.isUndefined().value() ? '' : routeConfig.value().route,

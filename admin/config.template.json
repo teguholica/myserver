@@ -5,6 +5,7 @@
   },
   "routes": [
     {
+      "type": "api",
       "name": "repo",
       "route": "repo",
       "port": "7005"

@@ -10,4 +10,6 @@ program
   .command('unpublish <name>', 'unpublish app from PM2')
   .command('list', 'list packages installed')
   .command('postreceive', 'post-receive for repo')
+  .command('generatepm2', 'generate PM2 JSON config')
+  .command('delete <name>', 'delete app')
   .parse(process.argv)

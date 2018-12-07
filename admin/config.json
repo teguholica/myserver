@@ -11,16 +11,10 @@
       "port": "7005"
     },
     {
-      "type": "hosting",
-      "name": "hosting",
-      "route": "hosting",
-      "port": "3001"
-    },
-    {
-      "type": "hosting",
-      "name": "frontend",
-      "route": "frontend",
-      "port": "3002"
+      "type": "api",
+      "name": "monitor",
+      "route": "monitor",
+      "port": "3000"
     }
   ]
 }
